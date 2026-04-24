@@ -1,22 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 
-int my_strcmp(const char *a, const char *b) {
-    int i = 0;
+int main(){
+    char s1[10] = "hi";
+    char s2[] = "hi";
+    char s3[] = {'h', 'i', '\0'};
 
-    while (a[i] != '\0' && b[i] != '\0') {
-        if (a[i] != b[i]) {
-            return a[i] - b[i];
-        }
-        i++;
-    }
-
-    return a[i] - b[i];
-}
-
-int main() {
-    printf("%d\n", my_strcmp("abc", "abcd"));
-    printf("%d\n", my_strcmp("abc", "abc"));
-    printf("%d\n", my_strcmp("b", "a"));
+    printf("%zu %zu\n", sizeof(s1), strlen(s1));
+    printf("%zu %zu\n", sizeof(s2), strlen(s2));
+    printf("%zu %zu\n", sizeof(s3), strlen(s3));
 
     return 0;
 }
